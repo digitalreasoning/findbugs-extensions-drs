@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <MessageCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="messagecollection.xsd">
-  <!--
-  **********************************************************************
-  Plugin information
-  **********************************************************************
-  -->
-  <Plugin>
-    <ShortDescription>DRS Findbugs Extensions</ShortDescription>
-    <Details>
-<![CDATA[
+                   xsi:noNamespaceSchemaLocation="messagecollection.xsd">
+	<!--
+	  **********************************************************************
+	  Plugin information
+	  **********************************************************************
+	  -->
+	<Plugin>
+		<ShortDescription>DRS Findbugs Extensions</ShortDescription>
+		<Details>
+			<![CDATA[
 <p>
 This plugin contains some extensions to findbugs that we found necessary.
 </p>
 ]]>
-    </Details>
-  </Plugin>
-  <Detector class="com.digitalreasoning.sdp.findbugs.MoreDefaultEncodingDetector">
-    <Details>
-<![CDATA[
+		</Details>
+	</Plugin>
+	<Detector class="com.digitalreasoning.sdp.findbugs.MoreDefaultEncodingDetector">
+		<Details>
+			<![CDATA[
 <p> Checks for calls to methods which perform a byte to String (or String to byte) conversion using the user's default
  platform encoding. This can cause the application behaviour to vary between platforms.  </p>
 <p> This detector augments the core findbugs detector by including methods from common utility libraries, such as commons-io. </p>
 ]]>
-      </Details>
-  </Detector>
+		</Details>
+	</Detector>
+
+	<BugPattern type="DM_MORE_DEFAULT_ENCODING">
+		<ShortDescription>Reliance on default encoding</ShortDescription>
+		<LongDescription>Found reliance on default encoding in {1}: {2}</LongDescription>
+		<Details>
+			<![CDATA[
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+]]>
+		</Details>
+	</BugPattern>
+	<BugCode abbrev="DE">Default Encoding Issue</BugCode>
+
 
 </MessageCollection>

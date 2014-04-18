@@ -25,7 +25,6 @@ import org.apache.bcel.classfile.JavaClass;
 public class MoreDefaultEncodingDetector
 		extends OpcodeStackDetector
 {
-
 	private final BugAccumulator bugAccumulator;
 
 	private final MoreDefaultEncodingAnnotationDatabase defaultEncodingAnnotationDatabase;
@@ -36,9 +35,9 @@ public class MoreDefaultEncodingDetector
 	 */
 	static class MoreDefaultEncodingAnnotation extends AnnotationEnumeration<MoreDefaultEncodingAnnotation>
 	{
-		public final static MoreDefaultEncodingAnnotation DEFAULT_ENCODING = new MoreDefaultEncodingAnnotation("DefaultEncoding", 1);
+		public final static MoreDefaultEncodingAnnotation MORE_DEFAULT_ENCODING = new MoreDefaultEncodingAnnotation("MoreDefaultEncoding", 1);
 
-		private final static MoreDefaultEncodingAnnotation[] myValues = { DEFAULT_ENCODING };
+		private final static MoreDefaultEncodingAnnotation[] myValues = {MORE_DEFAULT_ENCODING};
 
 		public static MoreDefaultEncodingAnnotation[] values() {
 			return myValues.clone();
@@ -73,124 +72,124 @@ public class MoreDefaultEncodingDetector
 		public void loadAuxiliaryAnnotations() {
 			// commons-io
 			// FileUtils
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "readFileToString", "(Ljava/io/File;)Ljava/lang/String;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "readLines", "(Ljava/io/File;)Ljava/util/List;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "lineIterator", "(Ljava/io/File;)Lorg/apache/commons/io/LineIterator;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeStringToFile", "(Ljava/io/File;Ljava/lang/String;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeStringToFile", "(Ljava/io/File;Ljava/lang/String;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "write", "(Ljava/io/File;Ljava/lang/CharSequence;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "write", "(Ljava/io/File;Ljava/lang/CharSequence;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeLines", "(Ljava/io/File;Ljava/util/Collection;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeLines", "(Ljava/io/File;Ljava/util/Collection;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeLines", "(Ljava/io/File;Ljava/util/Collection;Ljava/lang/String;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeLines", "(Ljava/io/File;Ljava/util/Collection;Ljava/lang/String;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "readFileToString", "(Ljava/io/File;)Ljava/lang/String;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "readLines", "(Ljava/io/File;)Ljava/util/List;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "lineIterator", "(Ljava/io/File;)Lorg/apache/commons/io/LineIterator;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeStringToFile", "(Ljava/io/File;Ljava/lang/String;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeStringToFile", "(Ljava/io/File;Ljava/lang/String;Z)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "write", "(Ljava/io/File;Ljava/lang/CharSequence;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "write", "(Ljava/io/File;Ljava/lang/CharSequence;Z)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeLines", "(Ljava/io/File;Ljava/util/Collection;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeLines", "(Ljava/io/File;Ljava/util/Collection;Z)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeLines", "(Ljava/io/File;Ljava/util/Collection;Ljava/lang/String;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.FileUtils", "writeLines", "(Ljava/io/File;Ljava/util/Collection;Ljava/lang/String;Z)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 
 			// ReaderInputStream
 			addMethodAnnotation("org.apache.commons.io.input.ReaderInputStream", "<init>", "(Ljava/io/Reader;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 
 			// ReversedLinesFileReader
 			addMethodAnnotation("org.apache.commons.io.input.ReversedLinesFileReader", "<init>", "(Ljava/io/File;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 
 			// WriterOutputStream
 			addMethodAnnotation("org.apache.commons.io.output.WriterOutputStream", "<init>", "(Ljava/io/Writer;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 
 			// IOUtils
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "copy", "(Ljava/io/InputStream;Ljava/io/Writer;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "copy", "(Ljava/io/Reader;Ljava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "readLines", "(Ljava/io/InputStream;)Ljava/util/List;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toByteArray", "(Ljava/io/Reader;)[B", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toByteArray", "(Ljava/lang/String;)[B", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toCharArray", "(Ljava/io/InputStream;)[C", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toInputStream", "(Ljava/lang/CharSequence;)Ljava/io/InputStream;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toInputStream", "(Ljava/lang/String;)Ljava/io/InputStream;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toString", "(Ljava/io/InputStream;)Ljava/lang/String;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toString", "(Ljava/net/URI;)Ljava/lang/String;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toString", "(Ljava/net/URL;)Ljava/lang/String;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "toString", "([B)Ljava/lang/String;", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "([BLjava/io/Writer;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "([CLjava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "(Ljava/lang/CharSequence;Ljava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "(Ljava/lang/StringBuffer;Ljava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "(Ljava/lang/String;Ljava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.IOUtils", "writeLines", "(Ljava/util/Collection;Ljava/lang/String;Ljava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "copy", "(Ljava/io/InputStream;Ljava/io/Writer;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "copy", "(Ljava/io/Reader;Ljava/io/OutputStream;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "readLines", "(Ljava/io/InputStream;)Ljava/util/List;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toByteArray", "(Ljava/io/Reader;)[B", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toByteArray", "(Ljava/lang/String;)[B", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toCharArray", "(Ljava/io/InputStream;)[C", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toInputStream", "(Ljava/lang/CharSequence;)Ljava/io/InputStream;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toInputStream", "(Ljava/lang/String;)Ljava/io/InputStream;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toString", "(Ljava/io/InputStream;)Ljava/lang/String;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toString", "(Ljava/net/URI;)Ljava/lang/String;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toString", "(Ljava/net/URL;)Ljava/lang/String;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "toString", "([B)Ljava/lang/String;", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "([BLjava/io/Writer;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "([CLjava/io/OutputStream;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "(Ljava/lang/CharSequence;Ljava/io/OutputStream;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "(Ljava/lang/StringBuffer;Ljava/io/OutputStream;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "write", "(Ljava/lang/String;Ljava/io/OutputStream;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.IOUtils", "writeLines", "(Ljava/util/Collection;Ljava/lang/String;Ljava/io/OutputStream;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 
 			// CopyUtils
-			addMethodAnnotation("org.apache.commons.io.CopyUtils", "copy", "([BLjava/io/Writer;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.CopyUtils", "copy", "(Ljava/io/InputStream;Ljava/io/Writer;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.CopyUtils", "copy", "(Ljava/io/Reader;Ljava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
-			addMethodAnnotation("org.apache.commons.io.CopyUtils", "copy", "(Ljava/lang/String;Ljava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.CopyUtils", "copy", "([BLjava/io/Writer;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.CopyUtils", "copy", "(Ljava/io/InputStream;Ljava/io/Writer;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.CopyUtils", "copy", "(Ljava/io/Reader;Ljava/io/OutputStream;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
+			addMethodAnnotation("org.apache.commons.io.CopyUtils", "copy", "(Ljava/lang/String;Ljava/io/OutputStream;)V", true,
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 
 
 			// LockableFileWriter
 			addMethodAnnotation("org.apache.commons.io.output.LockableFileWriter", "<init>", "(Ljava/io/File;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.output.LockableFileWriter", "<init>", "(Ljava/io/File;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.output.LockableFileWriter", "<init>", "(Ljava/io/File;Ljava/lang/String;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.output.LockableFileWriter", "<init>", "(Ljava/lang/String;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.output.LockableFileWriter", "<init>", "(Ljava/lang/String;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.output.LockableFileWriter", "<init>", "(Ljava/lang/String;Ljava/lang/String;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 
 
 			// XmlStreamReader
 			addMethodAnnotation("org.apache.commons.io.input.XmlStreamReader", "<init>", "(Ljava/io/File;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.input.XmlStreamReader", "<init>", "(Ljava/io/InputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.input.XmlStreamReader", "<init>", "(Ljava/io/InputStream;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.input.XmlStreamReader", "<init>", "(Ljava/io/InputStream;Ljava/lang/String;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.input.XmlStreamReader", "<init>", "(Ljava/io/InputStream;Ljava/lang/String;Z)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.input.XmlStreamReader", "<init>", "(Ljava/net/URL;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 
 			// XmlStreamWriter
 			addMethodAnnotation("org.apache.commons.io.output.XmlStreamWriter", "<init>", "(Ljava/io/OutputStream;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 			addMethodAnnotation("org.apache.commons.io.output.XmlStreamWriter", "<init>", "(Ljava/io/File;)V", false,
-			                    MoreDefaultEncodingAnnotation.DEFAULT_ENCODING);
+			                    MoreDefaultEncodingAnnotation.MORE_DEFAULT_ENCODING);
 		}
 
 	}
@@ -226,7 +225,7 @@ public class MoreDefaultEncodingDetector
 				XMethod callSeen = XFactory.createXMethod(MethodAnnotation.fromCalledMethod(this));
 				MoreDefaultEncodingAnnotation annotation = defaultEncodingAnnotationDatabase.getDirectAnnotation(callSeen);
 				if (annotation != null) {
-					bugAccumulator.accumulateBug(new BugInstance(this, "DM_DEFAULT_ENCODING", HIGH_PRIORITY).addClassAndMethod(this)
+					bugAccumulator.accumulateBug(new BugInstance(this, "DM_MORE_DEFAULT_ENCODING", HIGH_PRIORITY).addClassAndMethod(this)
 					                                                                                        .addCalledMethod(this), this);
 				}
 		}
