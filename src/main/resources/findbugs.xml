@@ -1,0 +1,10 @@
+<FindbugsPlugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="findbugsplugin.xsd"
+          pluginid="com.digitalreasoning.sdp.findbugs"
+          version="${project.version}"
+          provider="Digital Reasoning" website="https://github.com/digitalreasoning/findbugs-extensions-drs">
+          
+          <Detector class="com.digitalreasoning.sdp.findbugs.MoreDefaultEncodingDetector" speed="fast"
+                    reports="DM_DEFAULT_ENCODING"/>
+
+</FindbugsPlugin>
