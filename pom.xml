@@ -13,6 +13,36 @@
 	<artifactId>findbugs-extensions-drs</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
+	<name>Findbugs Extensions for Digital Reasoning</name>
+	<description>A collection of findbugs extensions that we find useful for our projects.</description>
+
+	<url>https://github.com/digitalreasoning/findbugs-extensions-drs</url>
+	<scm>
+		<url>https://github.com/digitalreasoning/findbugs-extensions-drs</url>
+		<connection>scm:git:git://github.com/digitalreasoning/findbugs-extensions-drs.git</connection>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Jared Bunting</name>
+			<email>jared.bunting@digitalreasoning.com</email>
+			<organization>Digital Reasoning</organization>
+			<url>http://www.digitalreasoning.com</url>
+		</developer>
+		<developer>
+			<name>Keith Massey</name>
+			<email>keith.massey@digitalreasoning.com</email>
+			<organization>Digital Reasoning</organization>
+			<url>http://www.digitalreasoning.com</url>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
 
 	<dependencies>
 		<dependency>
