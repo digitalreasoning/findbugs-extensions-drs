@@ -6,9 +6,11 @@
 # maven
 target/
 *.versionsBackup
+*.releaseBackup
 build.number
 dependency-reduced-pom.xml
 build/
+release.properties
 
 # common junk
 *.log
