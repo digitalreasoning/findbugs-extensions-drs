@@ -18,7 +18,7 @@
 	<scm>
 		<url>https://github.com/digitalreasoning/findbugs-extensions-drs</url>
 		<connection>scm:git:git://github.com/digitalreasoning/findbugs-extensions-drs.git</connection>
-		<developerConnection>scm:git:git://github.com/digitalreasoning/findbugs-extensions-drs.git</developerConnection>
+		<developerConnection>https://github.com/digitalreasoning/findbugs-extensions-drs.git</developerConnection>
 	</scm>
 
 	<developers>
